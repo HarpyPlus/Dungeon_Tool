@@ -1,6 +1,6 @@
 a = 225 //text shadow color
 
-draw_set_font(fnt_Fil);
+draw_set_font(fnt_File);
 draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 draw_rectangle_color(-2, -2, display_get_width(), 44, c_white, c_white, c_white, c_white, false); //Main box
@@ -40,7 +40,7 @@ else {
 	draw_text_transformed_color(display_get_width() - 20, y, string(_current_hour) + ":" + string(current_minute) + " " + WhichTimeHalf, 1, 1, 0, c_black, c_black, c_black, c_black, 1); //Hour	
 }
 
-draw_set_font(fnt_Fil);
+draw_set_font(fnt_File);
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
 draw_line_width_color(-2, 44, display_get_width(), 44, 4, c_black, c_black); //Seperation from main screen
@@ -75,7 +75,7 @@ if (InEditBounds) {
 	draw_rectangle_color(121, 42, 569, 139, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
 	draw_rectangle_color(125, 46, 565, 135, c_white, c_white, c_white, c_white, false); //File Sel box
 	draw_text_transformed_color(175, 85, "Reload Sheet                    (Ctrl + R)", 1, 1, 0, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, 1); //Print File
-	draw_text_transformed_color(175, 120, "Preview Character          (Ctrl + O)", 1, 1, 0, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, 1); //Print Fileint File
+	draw_text_transformed_color(175, 120, "Preview Character          (Ctrl + P)", 1, 1, 0, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, 1); //Print Fileint File
 }
 
 if (InHelpBounds) {

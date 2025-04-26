@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"Obj_DisplayFloor",
+  "%Name":"Obj_Display",
   "eventList":[],
   "managed":true,
-  "name":"Obj_DisplayFloor",
+  "name":"Obj_Display",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Floor",
+    "path":"folders/Common/Floor.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -84,6 +84,14 @@ if (keyboard_check(vk_control)) {
 			global.spriteLoaded = true;
 		}
 	}
+	//Edit, RELOAD
+	if keyboard_check(ord("R")) {
+		//Reload all opened sheets, maybe something got fucked up?
+	}
+	//Edit, PREVIEW
+	if keyboard_check(ord("P")) {
+		//Preview your floor in-game, not just on the bottom of the screen
+	}
 }
 else if (keyboard_check_pressed(vk_escape)) {
 	room = Rm_Title;

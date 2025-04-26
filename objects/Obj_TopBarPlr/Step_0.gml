@@ -4,10 +4,7 @@ _current_hour = current_hour
 //FILE
 
 if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 0, 0, 124, 44)) {
-	if (mouse_check_button_pressed(mb_left)) {
-		InFileBounds = true;
-		InBounds = true;
-	}
+	InBounds = true;
 	FileSelCol = make_color_rgb(161, 231, 254);
 }
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), -2, 45, 440, 305) && (InFileBounds == true))) {
@@ -92,3 +89,35 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 	//fill in with something later.
 }
 else { HelpSelCol = c_white; InHelpBounds = false; }
+
+//KEYBINDS
+if (keyboard_check(vk_control)) {
+	//File, NEW
+	if keyboard_check(ord("N")) {
+		var player_sprite = get_open_filename(".png", "Spr_Player");
+		global.spritePlayer = sprite_add(player_sprite, 1, false, false, 0, 0);
+		if (1 = 1) {
+			Obj_PreviewPlr.sprite_index = global.spritePlayer;
+			global.spriteLoaded = true;
+		}
+	}
+	//File, OPEN
+	if keyboard_check(ord("O")) {
+		//Opens character file, contains all offsets, character sheets, all that
+	}
+	//File, SAVE
+	if keyboard_check(ord("S")) {
+		//Save character sheet
+	}
+	//Edit, RELOAD
+	if keyboard_check(ord("R")) {
+		//Reload all opened sheets, maybe something got fucked up?
+	}
+	//Edit, PREVIEW
+	if keyboard_check(ord("P")) {
+		//Preview your character in-game
+	}
+}
+else if (keyboard_check_pressed(vk_escape)) {
+	room = Rm_Title;
+}

@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+//put this as a switch in future updates, somewhere
 if (keyboard_check_pressed(ord("X"))) {
 	switch (ScaleDown) {
 		case true :

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"lmao",
-    "path":"folders/Sprites/lmao.yy",
+    "name":"LogoVariants",
+    "path":"folders/Content/Sprites/LogoVariants.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

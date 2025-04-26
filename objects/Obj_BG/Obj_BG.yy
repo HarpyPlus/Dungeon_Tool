@@ -8,8 +8,8 @@
   "name":"Obj_BG",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ent_Editor",
-    "path":"folders/Objects/Ent_Editor.yy",
+    "name":"Common",
+    "path":"folders/Common.yy",
   },
   "parentObjectId":null,
   "persistent":false,

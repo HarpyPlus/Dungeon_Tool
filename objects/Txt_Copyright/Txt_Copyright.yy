@@ -8,8 +8,8 @@
   "name":"Txt_Copyright",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Common",
+    "path":"folders/Common.yy",
   },
   "parentObjectId":null,
   "persistent":false,

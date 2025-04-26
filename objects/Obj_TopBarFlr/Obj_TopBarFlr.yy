@@ -10,8 +10,8 @@
   "name":"Obj_TopBarFlr",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ent_Editor",
-    "path":"folders/Objects/Ent_Editor.yy",
+    "name":"Floor",
+    "path":"folders/Common/Floor.yy",
   },
   "parentObjectId":null,
   "persistent":false,

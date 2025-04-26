@@ -8,8 +8,8 @@
   "name":"Obj_LayoutPlr",
   "overriddenProperties":[],
   "parent":{
-    "name":"Ent_Editor",
-    "path":"folders/Objects/Ent_Editor.yy",
+    "name":"Player",
+    "path":"folders/Common/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

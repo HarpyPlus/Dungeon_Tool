@@ -25,8 +25,8 @@
   ],
   "name":"Rm_PlrEditor",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Editors",
+    "path":"folders/Scenes/Editors.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
