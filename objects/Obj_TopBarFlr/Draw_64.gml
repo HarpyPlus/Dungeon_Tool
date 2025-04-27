@@ -61,5 +61,7 @@ if (InEditBounds) {
 if (InHelpBounds) {
 	draw_rectangle_color(373, 44, 567, 102, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
 	draw_rectangle_color(375, 46, 565, 100, c_white, c_white, c_white, c_white, false); //File Sel box
+	//About                  Y-33      Y+5
+	draw_rectangle_color(381, 52, 559, 90, HASelCol, HASelCol, HASelCol, HASelCol, false);
 	draw_text_transformed_color(425, 85, "About", 1, 1, 0, c_black, c_black, c_black, c_black, 1); //Print File
 }

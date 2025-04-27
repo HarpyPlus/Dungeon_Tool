@@ -4,7 +4,7 @@ _current_hour = current_hour
 //FILE
 
 if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 0, 0, 124, 44)) {
-	InBounds = true;
+	InFileBounds = true;
 	FileSelCol = make_color_rgb(161, 231, 254);
 }
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), -2, 45, 440, 305) && (InFileBounds == true))) {

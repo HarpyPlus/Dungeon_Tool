@@ -13,6 +13,12 @@ FRSelCol = c_white;
 FCSelCol = c_white;
 FESelCol = c_white;
 
+//Edit
+
+
+//Help
+HASelCol = c_white;
+
 //if !save, c_ltgray. else, c_black
 SpriteLoadColor = c_ltgray;
 

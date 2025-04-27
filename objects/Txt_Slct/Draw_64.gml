@@ -30,7 +30,7 @@ if (room == Rm_Title) {
 	draw_set_font(fnt_Regular);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
-	draw_text_transformed_color(window_get_width()/4 + 10, window_get_height()/3 + window_get_height()/2 - window_get_height()/10, funnyString, 1, 1, 0, c_dkgray, c_dkgray, c_dkgray, c_dkgray, 1)
+	//draw_text_transformed_color((asset_get_index("funny" + string(funnyNumber)).sprite_width/2), (asset_get_index("funny" + string(funnyNumber)).bbox_bottom + 10), funnyString, 1, 1, 0, c_dkgray, c_dkgray, c_dkgray, c_dkgray, 1)
 
 	//Version number (TOP LEFT)
 	draw_set_font(fnt_Regular);
