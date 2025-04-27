@@ -1,6 +1,17 @@
 
 //FILE
 
+//if player is on nothing, go back to white
+if (!InFileBounds || !InEditBounds || !InViewBounds || !InHelpBounds) {
+	FirstSelCol = c_white;
+	SeconSelCol = c_white;
+	ThirdSelCol = c_white;
+	FourtSelCol = c_white;
+	FifthSelCol = c_white;
+	SixthSelCol = c_white;
+	SevenSelCol = c_white;
+}
+
 if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 0, 0, 124, 44)) {
 	InFileBounds = true;
 	FileSelCol = make_color_rgb(161, 231, 254);
@@ -8,7 +19,7 @@ if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 0, 0,
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), -2, 45, 440, 205) && (InFileBounds == true))) {
 	//New
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
-		FNSelCol = make_color_rgb(161, 231, 254);
+		FirstSelCol = make_color_rgb(161, 231, 254);
 		if (mouse_check_button_pressed(mb_left)) {
 			var floor_sprite = get_open_filename(".png", "Spr_Floor");
 			global.spriteFloor = sprite_add(floor_sprite, 1, false, false, 0, 0);
@@ -20,27 +31,27 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			}
 		}
 	}
-	else { FNSelCol = c_white; }
+	else { FirstSelCol = c_white; }
 	//Recent
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 91, 434, 125)) {
-		FRSelCol = make_color_rgb(161, 231, 254);
+		SeconSelCol = make_color_rgb(161, 231, 254);
 	}
-	else { FRSelCol = c_white; }
+	else { SeconSelCol = c_white; }
 	//Close
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 126, 434, 160)) {
-		FCSelCol = make_color_rgb(161, 231, 254);
+		ThirdSelCol = make_color_rgb(161, 231, 254);
 	}
-	else { FCSelCol = c_white; }
+	else { ThirdSelCol = c_white; }
 	//Exit
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 161, 434, 195)) {
-		FESelCol = make_color_rgb(161, 231, 254);
+		FourtSelCol = make_color_rgb(161, 231, 254);
 		if (mouse_check_button(mb_left)) {
 			room = Rm_Title;
 		}
 	}
-	else { FESelCol = c_white; }
+	else { FourtSelCol = c_white; }
 }
-else { FileSelCol = c_white; InFileBounds = false; InBounds = false; }
+else { FileSelCol = c_white; InFileBounds = false; }
 
 //EDIT
 
@@ -66,12 +77,19 @@ if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 375, 
 	InHelpBounds = true;
 	HelpSelCol = make_color_rgb(161, 231, 254);
 }
-else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 375, 46, 815, 135) && (InHelpBounds == true))) {
-	//fill in with something later.
+else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 375, 45, 565, 100) && (InHelpBounds == true))) {
+	//About
+	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 381, 52, 559, 90)) {
+		FirstSelCol = make_color_rgb(161, 231, 254);
+	}
+	else { FirstSelCol = c_white; }
 }
 else { HelpSelCol = c_white; InHelpBounds = false; }
 
-//KEYBINDS
+
+// KEYBINDS //
+
+
 if (keyboard_check(vk_control)) {
 	//File, NEW
 	if keyboard_check(ord("N")) {

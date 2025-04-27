@@ -38,30 +38,32 @@ if (InFileBounds) {
 	draw_rectangle_color(-6, 42, 444, 209, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
 	draw_rectangle_color(-2, 46, 440, 205, c_white, c_white, c_white, c_white, false); //File Sel box
 	//New                  Y-33      Y+5
-	draw_rectangle_color(4, 52, 434, 90, FNSelCol, FNSelCol, FNSelCol, FNSelCol, false);
+	draw_rectangle_color(4, 52, 434, 90, FirstSelCol, FirstSelCol, FirstSelCol, FirstSelCol, false);
 	draw_text_transformed_color(50, 85, "New                                 (Ctrl + N)", 1, 1, 0, c_black, c_black, c_black, c_black, 1);
 	//Recent               Y-29      Y+5
-	draw_rectangle_color(4, 91, 434, 125, FRSelCol, FRSelCol, FRSelCol, FRSelCol, false);
+	draw_rectangle_color(4, 91, 434, 125, SeconSelCol, SeconSelCol, SeconSelCol, SeconSelCol, false);
 	draw_text_transformed_color(50, 120, "Recent Files                                    >>", 1, 1, 0, c_maroon, c_maroon, c_red, c_red, 1);
 	//Close                 Y-29      Y+5
-	draw_rectangle_color(4, 126, 434, 160, FCSelCol, FCSelCol, FCSelCol, FCSelCol, false);
+	draw_rectangle_color(4, 126, 434, 160, ThirdSelCol, ThirdSelCol, ThirdSelCol, ThirdSelCol, false);
 	draw_text_transformed_color(50, 155, "Close", 1, 1, 0, c_black, c_black, c_black, c_black, 1); //Print File
 	//Exit                  Y-29      Y+5
-	draw_rectangle_color(4, 161, 434, 195, FESelCol, FESelCol, FESelCol, FESelCol, false);
+	draw_rectangle_color(4, 161, 434, 195, FourtSelCol, FourtSelCol, FourtSelCol, FourtSelCol, false);
 	draw_text_transformed_color(50, 190, "Exit                                 (Escape)", 1, 1, 0, c_black, c_black, c_black, c_black, 1); //Print File
 }
 
 if (InEditBounds) {
 	draw_rectangle_color(121, 42, 569, 139, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
 	draw_rectangle_color(125, 46, 565, 135, c_white, c_white, c_white, c_white, false); //File Sel box
+	draw_rectangle_color(131, 52, 559, 90, FirstSelCol, FirstSelCol, FirstSelCol, FirstSelCol, false);
 	draw_text_transformed_color(175, 85, "Reload Sheet                    (Ctrl + R)", 1, 1, 0, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, 1); //Print File
+	draw_rectangle_color(131, 91, 559, 126, SeconSelCol, SeconSelCol, SeconSelCol, SeconSelCol, false);
 	draw_text_transformed_color(175, 120, "Preview Floor                    (Ctrl + O)", 1, 1, 0, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, SpriteLoadColor, 1); //Print Fileint File
 }
 
 if (InHelpBounds) {
-	draw_rectangle_color(373, 44, 567, 102, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
+	draw_rectangle_color(371, 42, 569, 104, c_ltgray, c_ltgray, c_ltgray, c_ltgray, false); //File Sel box OUTLINE
 	draw_rectangle_color(375, 46, 565, 100, c_white, c_white, c_white, c_white, false); //File Sel box
 	//About                  Y-33      Y+5
-	draw_rectangle_color(381, 52, 559, 90, HASelCol, HASelCol, HASelCol, HASelCol, false);
+	draw_rectangle_color(381, 52, 559, 90, FirstSelCol, FirstSelCol, FirstSelCol, FirstSelCol, false);
 	draw_text_transformed_color(425, 85, "About", 1, 1, 0, c_black, c_black, c_black, c_black, 1); //Print File
 }

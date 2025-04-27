@@ -2,22 +2,13 @@ InFileBounds = false;
 InEditBounds = false;
 InViewBounds = false;
 InHelpBounds = false;
-FileSelCol = c_white;
-EditSelCol = c_white;
-ViewSelCol = c_white;
-HelpSelCol = c_white;
-
-//File
-FNSelCol = c_white;
-FRSelCol = c_white;
-FCSelCol = c_white;
-FESelCol = c_white;
-
-//Edit
-
-
-//Help
-HASelCol = c_white;
+FirstSelCol = c_white;
+SeconSelCol = c_white;
+ThirdSelCol = c_white;
+FourtSelCol = c_white;
+FifthSelCol = c_white;
+SixthSelCol = c_white;
+SevenSelCol = c_white;
 
 //if !save, c_ltgray. else, c_black
 SpriteLoadColor = c_ltgray;
