@@ -24,7 +24,7 @@ if (room == Rm_Title) {
 	draw_text_transformed_color(TXT_Ext.x, TXT_Ext.y, "Exit", ExtTextSiz, ExtTextSiz, 0, ExtTextCol, ExtTextCol, ExtTextCol, ExtTextCol, 1)
 
 	//Logo
-	draw_sprite(asset_get_index("funny" + string(funnyNumber)), image_index, window_get_width()/4 + -window_get_width()/10, window_get_height()/3)
+	draw_sprite(asset_get_index("funny" + string(funnyNumber)), image_index, window_get_width()/4, window_get_height()/2)
 	draw_set_font(fnt_Regular);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_bottom);
