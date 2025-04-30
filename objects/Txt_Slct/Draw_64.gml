@@ -1,5 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
 if (room == Rm_Title) {
 	draw_set_font(fnt_Menu);
 	draw_set_halign(fa_center);
@@ -16,7 +14,7 @@ if (room == Rm_Title) {
 	draw_set_font(fnt_Menu);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
-	draw_text_transformed_color(TXT_Net.x, TXT_Net.y, "Options", 1, 1, 0, c_dkgray, c_dkgray, c_dkgray, c_dkgray, 1)
+	draw_text_transformed_color(TXT_Opt.x, TXT_Opt.y, "Options", OptTextSiz, OptTextSiz, 0, OptTextCol, OptTextCol, OptTextCol, OptTextCol, 1)
 	draw_set_font(fnt_Menu);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_top);
@@ -36,5 +34,5 @@ if (room == Rm_Title) {
 	draw_set_font(fnt_Regular);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_middle);
-	draw_text_color(Txt_Copyright.x, 30, "v" + versionNumber, c_white, c_white, c_white, c_white, 1);
+	draw_text_color(Txt_Copyright.x, 30, "v" + GM_version + " (TEST BUILD)", c_white, c_white, c_white, c_white, 1);
 }

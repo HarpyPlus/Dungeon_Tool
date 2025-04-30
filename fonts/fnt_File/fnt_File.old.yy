@@ -1,7 +1,7 @@
 {
   "$GMFont":"",
   "%Name":"fnt_File",
-  "AntiAlias":0,
+  "AntiAlias":1,
   "applyKerning":0,
   "ascender":22,
   "ascenderOffset":0,
@@ -134,7 +134,10 @@
   "sdfSpread":8,
   "size":24.0,
   "styleName":"Regular",
-  "textureGroupId":null,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
   "TTFName":"",
   "usesSDF":false,
 }
