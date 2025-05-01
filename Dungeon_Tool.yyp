@@ -41,6 +41,7 @@
     {"id":{"name":"Txt_Slct","path":"objects/Txt_Slct/Txt_Slct.yy",},},
     {"id":{"name":"Rm_EnmEditor","path":"rooms/Rm_EnmEditor/Rm_EnmEditor.yy",},},
     {"id":{"name":"Rm_FlrEditor","path":"rooms/Rm_FlrEditor/Rm_FlrEditor.yy",},},
+    {"id":{"name":"Rm_Options","path":"rooms/Rm_Options/Rm_Options.yy",},},
     {"id":{"name":"Rm_PlrEditor","path":"rooms/Rm_PlrEditor/Rm_PlrEditor.yy",},},
     {"id":{"name":"Rm_Title","path":"rooms/Rm_Title/Rm_Title.yy",},},
     {"id":{"name":"funny1","path":"sprites/funny1/funny1.yy",},},
@@ -55,6 +56,7 @@
     {"roomId":{"name":"Rm_FlrEditor","path":"rooms/Rm_FlrEditor/Rm_FlrEditor.yy",},},
     {"roomId":{"name":"Rm_EnmEditor","path":"rooms/Rm_EnmEditor/Rm_EnmEditor.yy",},},
     {"roomId":{"name":"Rm_PlrEditor","path":"rooms/Rm_PlrEditor/Rm_PlrEditor.yy",},},
+    {"roomId":{"name":"Rm_Options","path":"rooms/Rm_Options/Rm_Options.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
