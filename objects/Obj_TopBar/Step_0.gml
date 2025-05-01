@@ -26,14 +26,13 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
-					gpu_set_texfilter(AddedTextureSharpen); //Options; if true, will sharpen imported image
+					gpu_set_texfilter(global.OPT_AddedTextureSharpen); //Options; if true, will sharpen imported image
 					var floor_sprite = get_open_filename(".png", "Spr_Floor");
 					global.spriteFloor = sprite_add(floor_sprite, 1, false, false, 0, 0);
 					var door_sprite = get_open_filename(".png", "Spr_Door");
 					global.spriteDoor = sprite_add(door_sprite, 1, false, false, 0, 0);
-					gpu_set_texfilter(false)
 					if (1 = 1) {
-						Obj_PreviewFlr.sprite_index = global.spriteFloor;
+						Obj_Preview.sprite_index = global.spriteFloor;
 						global.spriteLoaded = true;
 					}
 				}
@@ -65,14 +64,13 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
-					gpu_set_texfilter(AddedTextureSharpen); //Options; if true, will sharpen imported image
+					gpu_set_texfilter(!global.OPT_AddedTextureSharpen);
 					var player_sprite = get_open_filename(".png", "Spr_Player");
 					global.spritePlayer = sprite_add(player_sprite, 1, false, false, 0, 0);
 					if (1 = 1) {
 						Obj_Preview.sprite_index = global.spritePlayer;
 						global.spriteLoaded = true;
 					}
-					gpu_set_texfilter(false)
 				}
 			}
 			else { FirstSelCol = c_white; }
@@ -109,6 +107,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 261, 434, 295)) {
 				SixthSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button(mb_left)) {
+					gpu_set_texfilter(!false)
 					room = Rm_Title
 				}
 			}
@@ -166,7 +165,7 @@ if (keyboard_check(vk_control)) {
 				var door_sprite = get_open_filename(".png", "Spr_Door");
 				global.spriteDoor = sprite_add(door_sprite, 1, false, false, 0, 0);
 				if (1 = 1) {
-					Obj_PreviewFlr.sprite_index = global.spriteFloor;
+					Obj_Preview.sprite_index = global.spriteFloor;
 					global.spriteLoaded = true;
 				}
 			}
@@ -183,6 +182,7 @@ if (keyboard_check(vk_control)) {
 		case (Rm_PlrEditor) :
 			//File, NEW
 			if keyboard_check(ord("N")) {
+				gpu_set_texfilter(!global.OPT_AddedTextureSharpen);
 				var player_sprite = get_open_filename(".png", "Spr_Player");
 				global.spritePlayer = sprite_add(player_sprite, 1, false, false, 0, 0);
 				if (1 = 1) {
@@ -210,5 +210,6 @@ if (keyboard_check(vk_control)) {
 	}
 }
 else if (keyboard_check_pressed(vk_escape)) {
+	gpu_set_texfilter(!false);
 	room = Rm_Title;
 }

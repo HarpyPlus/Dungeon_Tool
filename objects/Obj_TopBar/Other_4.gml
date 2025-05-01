@@ -10,14 +10,8 @@ FifthSelCol = c_white;
 SixthSelCol = c_white;
 SevenSelCol = c_white;
 
-//if !save, c_ltgray. else, c_black
+//if !spriteload, c_ltgray. else, c_black
 SpriteLoadColor = c_ltgray;
-
-//Add to Options screen
-#region
-AddedTextureSharpen = true;
-WeirdTime = false;
-#endregion
 
 global.AmISaved = false;
 global.spriteLoaded = false;
@@ -27,7 +21,9 @@ switch (room) {
 	case (Rm_FlrEditor) :
 		BottomFileBB = 205;
 		break
+	//PLAYER
 	case (Rm_PlrEditor) :
+		//extends the bottom boundry to correctly go along with the drawn box
 		BottomFileBB = 305;
 		break
 }

@@ -21,7 +21,7 @@ draw_rectangle_color(375, -2, 500, 44, HelpSelCol, HelpSelCol, HelpSelCol, HelpS
 draw_text_transformed_color(x + 377, y + 2, "Help", 1, 1, 0, make_color_rgb(a, a, a), make_color_rgb(a, a, a), make_color_rgb(a, a, a), make_color_rgb(a, a, a), 1);
 draw_text_transformed_color(x + 375, y, "Help", 1, 1, 0, c_black, c_black, c_black, c_black, 1);
 
-if (WeirdTime == false) {
+if (global.OPT_WeirdTime == false) {
 	if (_current_hour >= 12) {
 		_current_hour -= 12;
 		currentDayHalf = " PM";
