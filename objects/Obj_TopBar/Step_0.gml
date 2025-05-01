@@ -58,7 +58,6 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			else { FourtSelCol = c_white; }
 			break
 		//PLAYER
-		
 		case (Rm_PlrEditor) :
 			//New
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
