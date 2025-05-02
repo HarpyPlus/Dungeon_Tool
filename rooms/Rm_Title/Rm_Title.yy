@@ -30,7 +30,7 @@
     {"$GMRInstanceLayer":"","%Name":"Background","depth":200,"effectEnabled":true,"effectType":"_filter_tintfilter","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v2","%Name":"inst_A46D77B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A46D77B","objectId":{"name":"SETUP","path":"objects/SETUP/SETUP.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":-64.0,"y":-64.0,},
       ],"layers":[],"name":"Background","properties":[
-        {"name":"g_TintCol","type":1,"value":"#FF0F0F0F",},
+        {"name":"g_TintCol","type":1,"value":"#FF303030",},
       ],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
   ],
   "name":"Rm_Title",

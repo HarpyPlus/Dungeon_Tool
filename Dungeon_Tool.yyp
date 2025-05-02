@@ -46,6 +46,7 @@
     {"id":{"name":"Rm_PlrEditor","path":"rooms/Rm_PlrEditor/Rm_PlrEditor.yy",},},
     {"id":{"name":"Rm_Title","path":"rooms/Rm_Title/Rm_Title.yy",},},
     {"id":{"name":"funny1","path":"sprites/funny1/funny1.yy",},},
+    {"id":{"name":"Spr_Bar_Grab","path":"sprites/Spr_Bar_Grab/Spr_Bar_Grab.yy",},},
     {"id":{"name":"Spr_Bar","path":"sprites/Spr_Bar/Spr_Bar.yy",},},
     {"id":{"name":"Spr_Dither","path":"sprites/Spr_Dither/Spr_Dither.yy",},},
     {"id":{"name":"Spr_TTL_BG","path":"sprites/Spr_TTL_BG/Spr_TTL_BG.yy",},},
