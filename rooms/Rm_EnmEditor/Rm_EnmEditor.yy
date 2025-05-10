@@ -7,13 +7,11 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_3BACC4C5_2","path":"rooms/Rm_EnmEditor/Rm_EnmEditor.yy",},
-    {"name":"inst_4D3EC339_2","path":"rooms/Rm_EnmEditor/Rm_EnmEditor.yy",},
     {"name":"inst_250FAF9F","path":"rooms/Rm_EnmEditor/Rm_EnmEditor.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v2","%Name":"inst_4D3EC339_2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4D3EC339_2","objectId":{"name":"Obj_BG","path":"objects/Obj_BG/Obj_BG.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-64.0,"y":32.0,},
         {"$GMRInstance":"v2","%Name":"inst_3BACC4C5_2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3BACC4C5_2","objectId":{"name":"Obj_Preview","path":"objects/Obj_Preview/Obj_Preview.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1536.0,"y":128.0,},
         {"$GMRInstance":"v2","%Name":"inst_250FAF9F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_250FAF9F","objectId":{"name":"Obj_TopBar","path":"objects/Obj_TopBar/Obj_TopBar.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":62.0,"y":37.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

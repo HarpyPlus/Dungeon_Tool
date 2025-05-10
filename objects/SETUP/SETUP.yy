@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Spr_TTL_BG",
-    "path":"sprites/Spr_TTL_BG/Spr_TTL_BG.yy",
+    "name":"Spr_TTL_BG_T_d",
+    "path":"sprites/Spr_TTL_BG_T_d/Spr_TTL_BG_T_d.yy",
   },
   "spriteMaskId":null,
   "visible":true,

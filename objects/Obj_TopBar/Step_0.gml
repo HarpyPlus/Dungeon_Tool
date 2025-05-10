@@ -1,7 +1,15 @@
+//I cant even EXPLAIN what is happening im just as confused as you are
+//left a few comments so that a basic grasp can be formed
+
+gpu_set_texfilter(!global.OPT_AddedTextureSharpen); //Options; if true, will sharpen imported image
+
+if (global.spriteLoaded || (global.spriteLoadedDoor && global.spriteLoadedDoor)) {
+	global.SpriteLoadColor = c_black
+	//changes this text color - called later - to black, 
+	//to signify that you can now do this action
+}
 
 _current_hour = current_hour
-
-//FILE
 
 //if player is on nothing, go back to white
 if (!InFileBounds || !InEditBounds || !InViewBounds || !InHelpBounds) {
@@ -14,26 +22,25 @@ if (!InFileBounds || !InEditBounds || !InViewBounds || !InHelpBounds) {
 	SevenSelCol = c_white;
 }
 
+#region FILE
 if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 0, 0, 124, 44)) {
 	InFileBounds = true;
 	FileSelCol = make_color_rgb(161, 231, 254);
 }
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), -2, 45, 440, BottomFileBB) && (InFileBounds == true))) {
 	switch (room) {
-		//FLOOR
 		case (Rm_FlrEditor) :
 			//New
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
-					gpu_set_texfilter(global.OPT_AddedTextureSharpen); //Options; if true, will sharpen imported image
 					var floor_sprite = get_open_filename(".png", "Spr_Floor");
 					global.spriteFloor = sprite_add(floor_sprite, 1, false, false, 0, 0);
 					var door_sprite = get_open_filename(".png", "Spr_Door");
 					global.spriteDoor = sprite_add(door_sprite, 1, false, false, 0, 0);
 					if (1 = 1) {
-						Obj_Preview.sprite_index = global.spriteFloor;
-						global.spriteLoaded = true;
+						global.spriteLoadedDoor = true;
+						global.spriteLoadedFloor = true;
 					}
 				}
 			}
@@ -52,18 +59,17 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 161, 434, 195)) {
 				FourtSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button(mb_left)) {
+					gpu_set_texfilter(true);
 					room = Rm_Title;
 				}
 			}
 			else { FourtSelCol = c_white; }
 			break
-		//PLAYER
 		case (Rm_PlrEditor) :
 			//New
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
-					gpu_set_texfilter(!global.OPT_AddedTextureSharpen);
 					var player_sprite = get_open_filename(".png", "Spr_Player");
 					global.spritePlayer = sprite_add(player_sprite, 1, false, false, 0, 0);
 					if (1 = 1) {
@@ -106,7 +112,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 261, 434, 295)) {
 				SixthSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button(mb_left)) {
-					gpu_set_texfilter(!false)
+					gpu_set_texfilter(true)
 					room = Rm_Title
 				}
 			}
@@ -115,6 +121,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 	}
 }
 else { FileSelCol = c_white; InFileBounds = false; }
+#endregion
 
 //EDIT
 
@@ -123,7 +130,45 @@ if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 125, 
 	EditSelCol = make_color_rgb(161, 231, 254);
 }
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 125, 45, 565, 135) && (InEditBounds == true))) {
-	//fill in with something later.
+	if (global.SpriteLoadColor != c_ltgray) {
+		//Reload Sheet
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 131, 52, 559, 90)) {
+			FirstSelCol = make_color_rgb(161, 231, 254);
+			if (mouse_check_button(mb_left)) {
+				switch (room) {
+					case (Rm_FlrEditor) :
+						break;
+					case (Rm_PlrEditor) :
+						if (Obj_Preview.sprite_index != Spr_Blank) {
+							Obj_Preview.sprite_index = Spr_Blank;
+						}
+						if (Obj_Preview.sprite_index == Spr_Blank) {
+							draw_sprite_part_ext(Obj_Preview.sprite_index, Obj_Preview.image_index, global.MyPCFrameX, global.MyPCFrameY, 32, 32,  Obj_Preview.x + (32 * -6.25), Obj_Preview.y, 25/2, 25/2, c_white, 1);
+							draw_sprite_part_ext(Obj_Preview.sprite_index, Obj_Preview.image_index, global.MyCPFrameX, global.MyCPFrameY, 32, 32,  Obj_Preview.x + (32 * -6.25), Obj_Preview.y + (32 * 14.75), 25/2, 25/2, c_white, 1);
+						}
+						break;
+				}
+			}
+		}
+		else { FirstSelCol = c_white; }
+		//Preview whatever your on
+		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 131, 91, 559, 125)) {
+			SeconSelCol = make_color_rgb(161, 231, 254);
+			//under works atm
+			/*
+			if (mouse_check_button(mb_left)) {
+				switch (room) {
+					case (Rm_FlrEditor) :
+						global.WhatAmITesting = "Floor";
+					case (Rm_PlrEditor) :
+						global.WhatAmITesting = "Player";
+				}
+				room = Rm_Testing;
+			}
+			*/
+		}
+		else { SeconSelCol = c_white; }
+	}
 }
 else { EditSelCol = c_white; InEditBounds = false; }
 
@@ -144,44 +189,48 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 	//About
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 381, 52, 559, 90)) {
 		FirstSelCol = make_color_rgb(161, 231, 254);
+		if (mouse_check_button_pressed(mb_left)) {
+			global.HelpImShowingmyNameForLegitimateReasons = true;
+			if (keyboard_check(vk_escape)) {
+				global.HelpImShowingmyNameForLegitimateReasons = false;
+			}
+		}
 	}
 	else { FirstSelCol = c_white; }
 }
 else { HelpSelCol = c_white; InHelpBounds = false; }
 
-
 // KEYBINDS //
 
-
+#region Keybinds
 if (keyboard_check(vk_control)) {
 	switch (room) {
 		//FLOOR
 		case (Rm_FlrEditor) :
 			//File, NEW
-			if keyboard_check(ord("N")) {
+			if (keyboard_check(ord("N"))) {
 				var floor_sprite = get_open_filename(".png", "Spr_Floor");
 				global.spriteFloor = sprite_add(floor_sprite, 1, false, false, 0, 0);
 				var door_sprite = get_open_filename(".png", "Spr_Door");
 				global.spriteDoor = sprite_add(door_sprite, 1, false, false, 0, 0);
 				if (1 = 1) {
-					Obj_Preview.sprite_index = global.spriteFloor;
-					global.spriteLoaded = true;
+					global.spriteLoadedDoor = true;
+					global.spriteLoadedFloor = true;
 				}
 			}
 			//Edit, RELOAD
-			if keyboard_check(ord("R")) {
+			if (keyboard_check(ord("R"))) {
 				//Reload all opened sheets, maybe something got fucked up?
 			}
 			//Edit, PREVIEW
-			if keyboard_check(ord("P")) {
+			if (keyboard_check(ord("P"))) {
 				//Preview your floor in-game, not just on the bottom of the screen
 			}
 			break
 		//PLAYER
 		case (Rm_PlrEditor) :
 			//File, NEW
-			if keyboard_check(ord("N")) {
-				gpu_set_texfilter(!global.OPT_AddedTextureSharpen);
+			if (keyboard_check(ord("N"))) {
 				var player_sprite = get_open_filename(".png", "Spr_Player");
 				global.spritePlayer = sprite_add(player_sprite, 1, false, false, 0, 0);
 				if (1 = 1) {
@@ -190,25 +239,26 @@ if (keyboard_check(vk_control)) {
 				}
 			}
 			//File, OPEN
-			if keyboard_check(ord("O")) {
+			if (keyboard_check(ord("O"))) {
 				//Opens character file, contains all offsets, character sheets, all that
 			}
 			//File, SAVE
-			if keyboard_check(ord("S")) {
+			if (keyboard_check(ord("S"))) {
 				//Save character sheet
 			}
 			//Edit, RELOAD
-			if keyboard_check(ord("R")) {
+			if (keyboard_check(ord("R"))) {
 				//Reload all opened sheets, maybe something got fucked up?
 			}
 			//Edit, PREVIEW
-			if keyboard_check(ord("P")) {
+			if (keyboard_check(ord("P"))) {
 				//Preview your character in-game
 			}
 			break
 	}
 }
-else if (keyboard_check_pressed(vk_escape)) {
-	gpu_set_texfilter(!false);
+else if (keyboard_check_pressed(vk_escape) && global.HelpImShowingmyNameForLegitimateReasons == false) {
+	gpu_set_texfilter(true);
 	room = Rm_Title;
 }
+#endregion

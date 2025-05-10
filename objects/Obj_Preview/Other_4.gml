@@ -1,8 +1,13 @@
 switch (room) {
 	case (Rm_FlrEditor) :
-		//Comment for future use.
+		//0 = OPEN
+		//180 = CLOSED
+		DOOR_OPENER = 0;
+		BarShiftX = 0;
+		FloorCount = 3;
 	case (Rm_PlrEditor) :
-		ScaleDown = false
-		MyFrameX = 0
-		MyFrameY = 0
+		global.MyPCFrameX = 0;
+		global.MyPCFrameY = 0;
+		global.MyCPFrameX = 0;
+		global.MyCPFrameY = 128;
 }

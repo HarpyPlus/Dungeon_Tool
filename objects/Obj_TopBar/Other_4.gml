@@ -10,11 +10,13 @@ FifthSelCol = c_white;
 SixthSelCol = c_white;
 SevenSelCol = c_white;
 
-//if !spriteload, c_ltgray. else, c_black
-SpriteLoadColor = c_ltgray;
+//hey thats me!!
+global.HelpImShowingmyNameForLegitimateReasons = false;
 
+Obj_Preview.sprite_index = global.spritePlayer;
+
+//only used in player testing, will make it a thing if croc wants it in floor testing
 global.AmISaved = false;
-global.spriteLoaded = false;
 
 switch (room) {
 	//FLOOR
@@ -23,7 +25,7 @@ switch (room) {
 		break
 	//PLAYER
 	case (Rm_PlrEditor) :
-		//extends the bottom boundry to correctly go along with the drawn box
+		//extends the bottom boundry to correctly go along with the drawn file box
 		BottomFileBB = 305;
 		break
 }
