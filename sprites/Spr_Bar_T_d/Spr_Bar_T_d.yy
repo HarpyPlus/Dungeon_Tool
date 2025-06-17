@@ -46,8 +46,8 @@
   },
   "origin":4,
   "parent":{
-    "name":"UI",
-    "path":"folders/Content/Sprites/Themes/Default/Assets/UI.yy",
+    "name":"Bar",
+    "path":"folders/Content/Sprites/Themes/Default/Assets/UI/Bar.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

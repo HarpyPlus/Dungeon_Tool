@@ -19,13 +19,6 @@ if (room == Rm_Testing) {
 		case ("Player") :
 	}
 	if keyboard_check_pressed(vk_escape) {
-		room_goto(Rm_FlrEditor)
+		room_goto(Rm_FlrEditor);
 	}
 }
-
-ini_open("tool_options.ini")
-global.SeenWarning = ini_read_real("Settings", "EpilepsyWarnSeen", false);
-if ((!global.SeenWarning) && (room == Rm_Title)) {
-	room = Rm_Warning;
-}
-ini_close();

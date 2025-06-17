@@ -2,9 +2,11 @@ switch (room) {
 	case (Rm_FlrEditor) :
 		//0 = OPEN
 		//180 = CLOSED
-		DOOR_OPENER = 0;
+		global.DOOR_OPENER = 0;
 		BarShiftX = 0;
 		FloorCount = 3;
+		
+		global.StageSelFade = 0;
 	case (Rm_PlrEditor) :
 		global.MyPCFrameX = 0;
 		global.MyPCFrameY = 0;

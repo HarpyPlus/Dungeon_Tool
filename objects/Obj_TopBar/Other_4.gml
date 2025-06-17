@@ -21,11 +21,11 @@ global.AmISaved = false;
 switch (room) {
 	//FLOOR
 	case (Rm_FlrEditor) :
-		BottomFileBB = 205;
-		break
+		BottomFileBB = 305;
+		break;
 	//PLAYER
 	case (Rm_PlrEditor) :
 		//extends the bottom boundry to correctly go along with the drawn file box
 		BottomFileBB = 305;
-		break
+		break;
 }

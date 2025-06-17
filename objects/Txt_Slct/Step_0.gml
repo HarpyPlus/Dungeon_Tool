@@ -1,34 +1,6 @@
-if (room == Rm_Warning) {
-	//Yah
-	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Yah.bbox_left - 230, TXT_Yah.bbox_top, TXT_Yah.bbox_right + 230, TXT_Yah.bbox_bottom + 40) {
-		YahTextCol = c_yellow;
-		if (YahTextSiz < 1.03) { YahTextSiz += 0.015; }
-		if (mouse_check_button(mb_left)) {
-			ini_open("tool_options.ini");
-			ini_write_string("Settings", "EpilepsyWarnSeen", true);
-			ini_close();
-			room = Rm_Title;
-		}
-	}
-	else {
-		YahTextCol = c_white;
-		if (YahTextSiz > 1) { YahTextSiz -= 0.015; }
-	}
-	//Nah
-	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Nah.bbox_left - 230, TXT_Nah.bbox_top, TXT_Nah.bbox_right + 230, TXT_Nah.bbox_bottom + 40) {
-		NahTextCol = c_red;
-		if (NahTextSiz < 1.03) { NahTextSiz += 0.015; }
-		if (mouse_check_button(mb_left)) {
-			game_end();
-		}
-	}
-	else {
-		NahTextCol = c_white;
-		if (NahTextSiz > 1) { NahTextSiz -= 0.015; }
-	}
-}
-else if (room == Rm_Title) {
+if (room == Rm_Title) {
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Plr.bbox_left - 170, TXT_Plr.bbox_top + 10, TXT_Plr.bbox_right + 170, TXT_Plr.bbox_bottom + 40)) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				PlrTextCol = c_yellow;
@@ -38,7 +10,7 @@ else if (room == Rm_Title) {
 		}
 		if (PlrTextSiz < 1.03) { PlrTextSiz += 0.015; }
 		if (mouse_check_button(mb_left)) {
-			room = Rm_PlrEditor;
+			//room = Rm_PlrEditor;
 		}
 	}
 	else {
@@ -47,6 +19,7 @@ else if (room == Rm_Title) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Enm.bbox_left - 170, TXT_Enm.bbox_top + 10, TXT_Enm.bbox_right + 170, TXT_Enm.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				EnmTextCol = c_yellow;
@@ -56,7 +29,7 @@ else if (room == Rm_Title) {
 		}
 		if (EnmTextSiz < 1.03) { EnmTextSiz += 0.015; }
 		if (mouse_check_button(mb_left)) {
-			room = Rm_EnmEditor;
+			//room = Rm_EnmEditor;
 		}
 	}
 	else {
@@ -65,6 +38,7 @@ else if (room == Rm_Title) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),TXT_Flr.bbox_left - 160, TXT_Flr.bbox_top, TXT_Flr.bbox_right + 160, TXT_Flr.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				FlrTextCol = c_yellow;
@@ -83,6 +57,7 @@ else if (room == Rm_Title) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Opt.bbox_left - 230, TXT_Opt.bbox_top, TXT_Opt.bbox_right + 230, TXT_Opt.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				OptTextCol = c_yellow;
@@ -101,6 +76,7 @@ else if (room == Rm_Title) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Htu.bbox_left - 100, TXT_Htu.bbox_top, TXT_Htu.bbox_right + 100, TXT_Htu.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				HtuTextCol = c_yellow;
@@ -120,6 +96,7 @@ else if (room == Rm_Title) {
 	}
 	
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_Ext.bbox_left - 170, TXT_Ext.bbox_top + 10, TXT_Ext.bbox_right + 170, TXT_Ext.bbox_bottom + 40)) {
+		Obj_Cursor.image_index = 1;
 		ExtTextCol = c_red;
 		if (ExtTextSiz < 1.03) { ExtTextSiz += 0.015; }
 		if (mouse_check_button(mb_left)) {
@@ -134,6 +111,7 @@ else if (room == Rm_Title) {
 }
 else if (room == Rm_Options) {
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_FULLSCREEN.bbox_left - 170, TXT_OPT_FULLSCREEN.bbox_top + 10, TXT_OPT_FULLSCREEN.bbox_right + 170, TXT_OPT_FULLSCREEN.bbox_bottom + 40)) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				Opt_FsTextCol = c_yellow;
@@ -157,6 +135,7 @@ else if (room == Rm_Options) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_TXTRSHARP.bbox_left - 170, TXT_OPT_TXTRSHARP.bbox_top + 10, TXT_OPT_TXTRSHARP.bbox_right + 170, TXT_OPT_TXTRSHARP.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				Opt_TsTextCol = c_yellow;
@@ -180,6 +159,7 @@ else if (room == Rm_Options) {
 	}
 	
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_TIME.bbox_left - 160, TXT_OPT_TIME.bbox_top, TXT_OPT_TIME.bbox_right + 160, TXT_OPT_TIME.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				Opt_WtTextCol = c_yellow;
@@ -202,10 +182,35 @@ else if (room == Rm_Options) {
 		if (Opt_WtTextSiz > 1) { Opt_WtTextSiz -= 0.015; }
 	}
 	
+	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_PAR.bbox_left - 160, TXT_OPT_PAR.bbox_top, TXT_OPT_PAR.bbox_right + 160, TXT_OPT_PAR.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
+		switch (global.OPT_CurrentTheme) {
+			case ("_T_d") :
+				Opt_PaTextCol = c_yellow;
+				break;
+			case ("_T_c") :
+				Opt_PaTextCol = make_color_rgb(255, 170, 215);
+		}
+		if (Opt_PaTextSiz < 1.03) { Opt_PaTextSiz += 0.015; }
+		if (mouse_check_button(mb_left)) {
+			Opt_PaTextCol = c_silver;
+			if (mouse_check_button_pressed(mb_left)) {
+				ini_open("tool_options.ini");
+				ini_write_real("Settings", "Parallax", !global.OPT_Parallax);
+				ini_close();
+			}
+		}
+	}
+	else {
+		Opt_PaTextCol = c_white;
+		if (Opt_PaTextSiz > 1) { Opt_PaTextSiz -= 0.015; }
+	}	
+
 	//This changes the STYLE of the game, but not the text. 
 	//The checks to text are over in...
 	//SETUP - Line 10, Step event
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_THEME.bbox_left - 160, TXT_OPT_THEME.bbox_top, TXT_OPT_THEME.bbox_right + 160, TXT_OPT_THEME.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				Opt_ThTextCol = c_yellow;
@@ -236,8 +241,9 @@ else if (room == Rm_Options) {
 		Opt_ThTextCol = c_white;
 		if (Opt_ThTextSiz > 1) { Opt_ThTextSiz -= 0.015; }
 	}
-	
+
 	if point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), TXT_OPT_EXIT.bbox_left - 230, TXT_OPT_EXIT.bbox_top, TXT_OPT_EXIT.bbox_right + 230, TXT_OPT_EXIT.bbox_bottom + 40) {
+		Obj_Cursor.image_index = 1;
 		switch (global.OPT_CurrentTheme) {
 			case ("_T_d") :
 				Opt_ExTextCol = c_yellow;

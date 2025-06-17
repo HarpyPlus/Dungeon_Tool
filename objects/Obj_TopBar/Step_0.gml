@@ -13,6 +13,7 @@ _current_hour = current_hour
 
 //if player is on nothing, go back to white
 if (!InFileBounds || !InEditBounds || !InViewBounds || !InHelpBounds) {
+	global.TopBarBounds = false;
 	FirstSelCol = c_white;
 	SeconSelCol = c_white;
 	ThirdSelCol = c_white;
@@ -20,6 +21,9 @@ if (!InFileBounds || !InEditBounds || !InViewBounds || !InHelpBounds) {
 	FifthSelCol = c_white;
 	SixthSelCol = c_white;
 	SevenSelCol = c_white;
+}
+if (InFileBounds || InEditBounds || InViewBounds || InHelpBounds) {
+	global.TopBarBounds = true;
 }
 
 #region FILE
@@ -32,6 +36,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 		case (Rm_FlrEditor) :
 			//New
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
+				Obj_Cursor.image_index = 1;
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
 					var floor_sprite = get_open_filename(".png", "Spr_Floor");
@@ -45,29 +50,48 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 				}
 			}
 			else { FirstSelCol = c_white; }
-			//Recent
+			//Open
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 91, 434, 125)) {
+				Obj_Cursor.image_index = 1;
 				SeconSelCol = make_color_rgb(161, 231, 254);
+				if (mouse_check_button_pressed(mb_left)) {
+					var floor_sprite = get_open_filename(".dgflr", "FLOOR");
+				}
 			}
 			else { SeconSelCol = c_white; }
-			//Close
+			//Recent
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 126, 434, 160)) {
+				Obj_Cursor.image_index = 1;
 				ThirdSelCol = make_color_rgb(161, 231, 254);
 			}
 			else { ThirdSelCol = c_white; }
-			//Exit
-			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 161, 434, 195)) {
+			//Save
+			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 176, 434, 210)) {
+				Obj_Cursor.image_index = 1;
 				FourtSelCol = make_color_rgb(161, 231, 254);
-				if (mouse_check_button(mb_left)) {
-					gpu_set_texfilter(true);
-					room = Rm_Title;
-				}
 			}
 			else { FourtSelCol = c_white; }
-			break
+			//Close
+			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 226, 434, 260)) {
+				Obj_Cursor.image_index = 1;
+				FifthSelCol = make_color_rgb(161, 231, 254);
+			}
+			else { FifthSelCol = c_white; }
+			//Exit
+			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 261, 434, 295)) {
+				Obj_Cursor.image_index = 1;
+				SixthSelCol = make_color_rgb(161, 231, 254);
+				if (mouse_check_button(mb_left)) {
+					gpu_set_texfilter(true)
+					room = Rm_Title
+				}
+			}
+			else { SixthSelCol = c_white; }
+			break;
 		case (Rm_PlrEditor) :
 			//New
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 51, 434, 90)) {
+				Obj_Cursor.image_index = 1;
 				FirstSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
 					var player_sprite = get_open_filename(".png", "Spr_Player");
@@ -81,6 +105,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			else { FirstSelCol = c_white; }
 			//Open
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 91, 434, 125)) {
+				Obj_Cursor.image_index = 1;
 				SeconSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button_pressed(mb_left)) {
 					var player_sprite = get_open_filename(".dgcha", "CLASS");
@@ -95,21 +120,25 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 			else { SeconSelCol = c_white; }
 			//Recent
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 126, 434, 160)) {
+				Obj_Cursor.image_index = 1;
 				ThirdSelCol = make_color_rgb(161, 231, 254);
 			}
 			else { ThirdSelCol = c_white; }
 			//Save
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 176, 434, 210)) {
+				Obj_Cursor.image_index = 1;
 				FourtSelCol = make_color_rgb(161, 231, 254);
 			}
 			else { FourtSelCol = c_white; }
 			//Close
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 226, 434, 260)) {
+				Obj_Cursor.image_index = 1;
 				FifthSelCol = make_color_rgb(161, 231, 254);
 			}
 			else { FifthSelCol = c_white; }
 			//Exit
 			if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 4, 261, 434, 295)) {
+				Obj_Cursor.image_index = 1;
 				SixthSelCol = make_color_rgb(161, 231, 254);
 				if (mouse_check_button(mb_left)) {
 					gpu_set_texfilter(true)
@@ -117,7 +146,7 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 				}
 			}
 			else { SixthSelCol = c_white; }
-			break
+			break;
 	}
 }
 else { FileSelCol = c_white; InFileBounds = false; }
@@ -131,6 +160,8 @@ if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 125, 
 }
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 125, 45, 565, 135) && (InEditBounds == true))) {
 	if (global.SpriteLoadColor != c_ltgray) {
+		SeconSelCol = c_white; 
+		/*
 		//Reload Sheet
 		if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 131, 52, 559, 90)) {
 			FirstSelCol = make_color_rgb(161, 231, 254);
@@ -166,8 +197,8 @@ else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),
 				room = Rm_Testing;
 			}
 			*/
-		}
-		else { SeconSelCol = c_white; }
+		//}
+		//else { SeconSelCol = c_white; }
 	}
 }
 else { EditSelCol = c_white; InEditBounds = false; }
@@ -188,6 +219,7 @@ if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 375, 
 else if ((point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 375, 45, 565, 100) && (InHelpBounds == true))) {
 	//About
 	if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 381, 52, 559, 90)) {
+		Obj_Cursor.image_index = 1;
 		FirstSelCol = make_color_rgb(161, 231, 254);
 		if (mouse_check_button_pressed(mb_left)) {
 			global.HelpImShowingmyNameForLegitimateReasons = true;
@@ -226,7 +258,7 @@ if (keyboard_check(vk_control)) {
 			if (keyboard_check(ord("P"))) {
 				//Preview your floor in-game, not just on the bottom of the screen
 			}
-			break
+			break;
 		//PLAYER
 		case (Rm_PlrEditor) :
 			//File, NEW
@@ -254,10 +286,13 @@ if (keyboard_check(vk_control)) {
 			if (keyboard_check(ord("P"))) {
 				//Preview your character in-game
 			}
-			break
+			break;
 	}
 }
-else if (keyboard_check_pressed(vk_escape) && global.HelpImShowingmyNameForLegitimateReasons == false) {
+if (keyboard_check(vk_escape) && global.HelpImShowingmyNameForLegitimateReasons) {
+	global.HelpImShowingmyNameForLegitimateReasons = false;
+}
+else if (keyboard_check_pressed(vk_escape) && !global.HelpImShowingmyNameForLegitimateReasons) {
 	gpu_set_texfilter(true);
 	room = Rm_Title;
 }

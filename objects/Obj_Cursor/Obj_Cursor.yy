@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"Obj_Player",
-  "eventList":[],
+  "%Name":"Obj_Cursor",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Obj_Player",
+  "name":"Obj_Cursor",
   "overriddenProperties":[],
   "parent":{
-    "name":"Entities",
-    "path":"folders/DEMO_ASSETS/Common/Entities.yy",
+    "name":"Common",
+    "path":"folders/Common.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"Cursor",
+    "path":"sprites/Cursor/Cursor.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

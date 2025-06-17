@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"Txt_Copyright",
+  "%Name":"Obj_funnysilly",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"Txt_Copyright",
+  "name":"Obj_funnysilly",
   "overriddenProperties":[],
   "parent":{
     "name":"Common",
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"funny1_T_d",
+    "path":"sprites/funny1_T_d/funny1_T_d.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
